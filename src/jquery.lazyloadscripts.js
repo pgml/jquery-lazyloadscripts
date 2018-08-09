@@ -51,6 +51,7 @@
 				{
 					$('<script />', { src: el.scriptSrc }).appendTo($('body'))
 					elems[index].scriptLoaded = true
+					$(el.elem).removeAttr('data-script-lazy')
 				}
 			})
 		}})
