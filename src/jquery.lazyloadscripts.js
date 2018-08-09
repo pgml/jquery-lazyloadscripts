@@ -49,7 +49,7 @@
 			{
 				if (!el.scriptLoaded && isInViewport($(el.elem)))
 				{
-					$('<script />', { src: el.scriptSrc }).appendTo(el.elem)
+					$('<script />', { src: el.scriptSrc }).appendTo($('body'))
 					elems[index].scriptLoaded = true
 				}
 			})
