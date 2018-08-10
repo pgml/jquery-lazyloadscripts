@@ -16,7 +16,8 @@
 	$.fn.lazyLoadScripts = function(options)
 	{
 		var opts = $.extend({
-			offset: 0
+			offset: 0,
+			onWatch: function() {}
 		}, options)
 
 		var elems = this.map(function(index, el)
@@ -25,7 +26,7 @@
 			{
 				return {
 					elem: el,
-					scriptLoaded: false,
+					inDom: false,
 					scriptSrc: $(el).data('lazy-load-scripts')
 				}
 			}
@@ -40,18 +41,30 @@
 			  , elOffsetTop    = elem.offset().top
 			  , elBottom       = elOffsetTop + elem.height()
 
-			return elBottom >= scrollTop - opts.offset && elOffsetTop <= documentBottom + opts.offset
+			return elBottom >= scrollTop - opts.offset
+				&& elOffsetTop <= documentBottom + opts.offset
 		}
+
+		opts.onWatch.call(elems)
 
 		$(window).on({ scroll: function()
 		{
 			elems.each(function(index, el)
 			{
-				if (!el.scriptLoaded && isInViewport($(el.elem)))
+				if (!el.inDom && isInViewport($(el.elem)))
 				{
-					$('<script />', { src: el.scriptSrc }).appendTo($('body'))
-					elems[index].scriptLoaded = true
+					var scriptSrc = typeof el.scriptSrc === 'string'
+						? [el.scriptSrc]
+						: el.scriptSrc
+
+					$.each(scriptSrc, function(index, src) {
+						$('<script />', { src: src }).appendTo($('body'))
+					})
+
+					elems[index].inDom = true
 					$(el.elem).removeAttr('data-lazy-load-scripts')
+
+					opts.onWatch(elems)
 				}
 			})
 		}})
