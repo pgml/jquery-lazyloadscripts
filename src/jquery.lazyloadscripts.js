@@ -7,7 +7,7 @@
  *
  * @author     Rico Dang <rico@pgml.de>
  * @copyright  2018 Rico Dang
- * @version    0.1.2
+ * @version    0.2.0
  * @date       09/08/2018
  */
 
