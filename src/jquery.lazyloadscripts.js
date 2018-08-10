@@ -21,7 +21,7 @@
 
 		var elems = this.map(function(index, el)
 		{
-			if ($(el).data('script-lazy'))
+			if ($(el).data('lazy-load-scripts'))
 			{
 				return {
 					elem: el,
