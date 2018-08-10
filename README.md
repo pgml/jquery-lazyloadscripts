@@ -12,12 +12,12 @@ This script is primarily useful for stuff that doesn't need to be available on p
 ```html
 <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
 
-<section id="map" data-script-lazy="[SCRIPT_URL]"></section>
+<section id="map" data-lazy-load-scripts="[SCRIPT_URL]"></section>
 ```
 
 ### javascript
 ```javascript
-$('section').LazyLoadScripts()
+$('section').lazyLoadScripts()
 ```
 
 ## Options
@@ -29,7 +29,7 @@ Type: `Int` Default: `0`
 The distance in px the lazy load should be triggered before it arrives at the actual container.
 
 ```javascript
-$('section').LazyLoadScripts({
+$('section').lazyLoadScripts({
 	offset: 200 // starts loading 200px above the container
 })
 ```

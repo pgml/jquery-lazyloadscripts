@@ -13,7 +13,7 @@
 
 ;(function($)
 {
-	$.fn.LazyLoadScripts = function(options)
+	$.fn.lazyLoadScripts = function(options)
 	{
 		var opts = $.extend({
 			offset: 0
@@ -26,7 +26,7 @@
 				return {
 					elem: el,
 					scriptLoaded: false,
-					scriptSrc: $(el).data('script-lazy')
+					scriptSrc: $(el).data('lazy-load-scripts')
 				}
 			}
 		})
@@ -51,7 +51,7 @@
 				{
 					$('<script />', { src: el.scriptSrc }).appendTo($('body'))
 					elems[index].scriptLoaded = true
-					$(el.elem).removeAttr('data-script-lazy')
+					$(el.elem).removeAttr('data-lazy-load-scripts')
 				}
 			})
 		}})
