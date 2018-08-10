@@ -21,12 +21,12 @@
 
 		var elems = this.map(function(index, el)
 		{
-			if (el.dataset.scriptLazy)
+			if ($(el).data('script-lazy'))
 			{
 				return {
 					elem: el,
 					scriptLoaded: false,
-					scriptSrc: el.dataset.scriptLazy
+					scriptSrc: $(el).data('script-lazy')
 				}
 			}
 		})
