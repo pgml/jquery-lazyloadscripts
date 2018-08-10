@@ -4,7 +4,7 @@ jquery-lazyloadscripts.js is a lightweight jquery plugin for lazy loading script
 
 ## Why?
 
-This script is primarily useful for stuff that doesn't need to be loaded on page load (such as google maps) to make improve loading speed and make all the page speed tools shut up.
+This script is primarily useful for stuff that doesn't need to be available on page load (such as google maps) to improve loading speed and make all the page speed tools shut up a bit more.
 
 ## Usage
 
