@@ -22,9 +22,9 @@
 	},
 	"homepage": "https://github.com/pgmlde/jquery-lazyloadscripts#readme",
 	"devDependencies": {
-		"gulp": "^3.9.1",
+		"gulp": "^4.0.2",
 		"gulp-concat": "^2.6.1",
-		"gulp-plumber": "^1.1.0",
+		"gulp-plumber": "^1.2.1",
 		"gulp-uglify": "^2.1.2",
 		"gulp-using": "*"
 	}
