@@ -67,6 +67,12 @@ $('section').lazyLoadScripts({
 })
 ```
 
+**onSuccess**
+
+Type: `function`
+
+A callback function that is executed (for each script) if the request succeeds. 
+
 ## To-do
 - find a cool way to determine if the script has been loaded successfully and pass the status to the onWatch event
 

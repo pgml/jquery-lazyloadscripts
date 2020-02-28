@@ -7,7 +7,7 @@
  *
  * @author     Rico Dang <rico@pgml.de>
  * @copyright  2018 Rico Dang
- * @version    0.2.0
+ * @version    0.2.1
  * @date       09/08/2018
  */
 
@@ -17,7 +17,8 @@
 	{
 		var opts = $.extend({
 			offset: 0,
-			onWatch: function() {}
+			onWatch: function() {},
+			onSuccess: function() {}
 		}, options)
 
 		var elems = this.map(function(index, el)
@@ -58,7 +59,7 @@
 						: el.scriptSrc
 
 					$.each(scriptSrc, function(index, src) {
-						$('<script />', { src: src }).appendTo($('body'))
+						$.getScript(src, opts.onSuccess)
 					})
 
 					elems[index].inDom = true
