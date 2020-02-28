@@ -7,7 +7,7 @@
  *
  * @author     Rico Dang <rico@pgml.de>
  * @copyright  2018 Rico Dang
- * @version    0.2.1
+ * @version    0.2.2
  * @date       09/08/2018
  */
 
@@ -18,7 +18,9 @@
 		var opts = $.extend({
 			offset: 0,
 			onWatch: function() {},
-			onSuccess: function() {}
+			onSuccess: function() {},
+			onAllDone: function() {},
+			onFail: function(error) {}
 		}, options)
 
 		var elems = this.map(function(index, el)
@@ -58,9 +60,10 @@
 						? [el.scriptSrc]
 						: el.scriptSrc
 
-					$.each(scriptSrc, function(index, src) {
-						$.getScript(src, opts.onSuccess)
-					})
+					var _arr = $.map(scriptSrc, function(scr) {
+						return $.getScript( scr, opts.onSuccess );
+					});
+					$.when.apply($, _arr).done(opts.onAllDone).fail(opts.onFail)
 
 					elems[index].inDom = true
 					$(el.elem).removeAttr('data-lazy-load-scripts')
