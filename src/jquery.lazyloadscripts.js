@@ -60,9 +60,10 @@
 						? [el.scriptSrc]
 						: el.scriptSrc
 
-					var _arr = $.map(scriptSrc, function(scr) {
-						return $.getScript( scr, opts.onSuccess );
-					});
+					var _arr = $.map(scriptSrc, function(src) {
+						return $.getScript(src, opts.onSuccess)
+					})
+
 					$.when.apply($, _arr).done(opts.onAllDone).fail(opts.onFail)
 
 					elems[index].inDom = true
