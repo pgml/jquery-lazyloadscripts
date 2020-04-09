@@ -1,6 +1,6 @@
 {
 	"name": "jquery-lazyloadscripts",
-	"version": "0.2.0",
+	"version": "0.2.2",
 	"description": "A lightweight plugin for lazy loading scripts.",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
