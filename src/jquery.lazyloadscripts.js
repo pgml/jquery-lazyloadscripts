@@ -1,15 +1,3 @@
-/**
- * NOTICE OF LICENSE
- *
- * Copyright (c) 2018 Rico Dang. All rights reserved.
- * This work is licensed under the terms of the MIT license.
- * For a copy, see <https://opensource.org/licenses/MIT>.
- *
- * @author     Rico Dang <rico@pgml.de>
- * @copyright  2018 Rico Dang
- * @version    0.2.2
- * @date       09/08/2018
- */
 
 ;(function($)
 {
