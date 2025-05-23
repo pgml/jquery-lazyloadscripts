@@ -87,12 +87,3 @@ A callback function that is executed when one or more scripts failed to load.
 
 ## To-do
 - [x] find a cool way to determine if the script has been loaded successfully and pass the status to the onWatch event
-
-
-## Author
-Rico Dang
-
-[github/pgmlde](https://github.com/pgmlde/)
-
-## License
-Copyright © 2018, Rico Dang. Released under the MIT License.
